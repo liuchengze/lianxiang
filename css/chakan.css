@@ -1,0 +1,46 @@
+*{
+    margin:  0;
+    padding: 0 ;
+    font-size: 12px;
+    text-decoration: none;
+    list-style: none;
+}
+.tu{
+    width: 1000px;
+    margin: 0 auto;
+    height: 100%;
+    overflow: hidden;
+}
+.tu .tu_left{
+    width: 100px;
+    height: 100%;
+    float: left;
+}
+.tu .tu_left ul{
+
+}
+.tu .tu_left ul li{
+    width: 98px;
+    height: 98px;
+    margin-top: 10px;
+    border: 1px solid #eeeeee;
+    cursor: pointer;
+}
+.tu .tu_left ul li img{
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.tu .tu_right img{
+    width: 650px;
+    height: 650px;
+
+}
+.tu .tu_right{
+    float: right;
+}
+a{
+    position: absolute;
+    right: 50px;
+    top: 50px;
+}
