@@ -1,0 +1,10 @@
+$(function(){
+	$('.navs_name').bind('mouseenter',function(){
+		if($(this).siblings('.navs_text').html().trim() != ''){
+			$(this).siblings('.navs_text').stop().slideDown(300);
+		}
+	});
+	$('.navs_namebox').bind('mouseleave',function(){
+		$(this).find('.navs_text').stop().slideUp(300);
+	});
+});

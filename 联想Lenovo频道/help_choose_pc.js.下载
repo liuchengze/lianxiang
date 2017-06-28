@@ -1,0 +1,15 @@
+    function myTab(tabclass){
+        var tab_title = $(tabclass).find(".tab_title");
+        var tab_body = $(tabclass).find(".tab_body");
+        var tab_listIndex = 0;
+        var _this = this;
+        _this.tabclass = tabclass;
+        tab_title.find(".tab_btn").click(function(){
+            tab_listIndex =$(this).index();
+            $(this).addClass("active").siblings().removeClass("active");
+            tab_body.find(".tab_list").eq(tab_listIndex).show().siblings().hide();
+        });
+    }
+    $(function(){
+        var recTab = new myTab(".help_tab");//标签切换
+    })

@@ -1,0 +1,25 @@
+$(function(){
+	$(".nav-btns > ul > li").each(function(){
+		var _this = $(this),
+			_btn = _this.find(".nav-btn"),
+			_pop = _this.find(".nav-child");
+
+		_this.hover(function(){
+			_this.addClass("active");
+
+			if(_pop){
+				_pop.stop(true, true).addClass("active");
+				_pop.find("li").each(function (k, v) {
+			        setTimeout(rot, 100 * k);
+			        function rot() {
+			            $(v).addClass("active");
+			        }
+			    });
+			}
+		},function(){
+			_this.removeClass("active");
+			_pop.stop(true, true).removeClass("active");
+			_pop.find("li").removeClass("active");
+		});
+	});
+})

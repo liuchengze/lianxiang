@@ -1,0 +1,48 @@
+ var Channel = (function(){
+        var _channel = {};
+
+        _channel.banner = function(){
+            var banner_img = $(".syy_20151210_03 .banner_img");
+            var banner_li = banner_img.find("li");
+            var banner_bt = $(".syy_20151210_03 .banner_bt");
+            var banner_length = banner_li.length;
+            var timer = 5000; //parseInt($("#TitleLoopTime").html() + '000');//循环播放间隔 
+            var ban = 0;
+            banner_li.eq(ban).show();
+
+            for (var i = 0; i < banner_length; i++) {
+                banner_bt.append($("<a></a>"));
+
+            }
+            banner_bt.find("a").eq(ban).addClass("now");
+            banner_img.hover(function () {
+                clearInterval(play);
+            }, function () {
+                play = setInterval(banner_next, timer);
+            })
+            function banner_next() {
+                ban++;
+                banner_li.fadeOut(500);
+                if (ban == banner_length) { ban = 0; }
+                banner_bt.find("a").removeClass("now");
+                banner_bt.find("a").eq(ban).addClass("now");
+                banner_li.eq(ban).fadeIn(500);
+            }
+            $(".banner_bt a").hover(function () {
+                var banner_bt_index = $(this).index();
+                clearInterval(play);
+                banner_bt.find("a").removeClass("now");
+                banner_bt.find("a").eq(banner_bt_index).addClass("now");
+                banner_li.fadeOut(0);
+                banner_li.eq(banner_bt_index).fadeIn(0);
+                play = setInterval(banner_next, timer);
+            })
+            var play = setInterval(banner_next, timer)
+        }
+
+        return _channel;
+    })(jQuery, Channel)
+    
+    $(function(){
+        Channel.banner();
+    });
