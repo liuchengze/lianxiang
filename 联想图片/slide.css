@@ -1,0 +1,10 @@
+.lunbo_slide .dots{position: absolute;bottom:30px;left:0;z-index: 1;width: 100%;}
+.lunbo_slide .dots > ul {position: absolute;top:0;left:0;list-style: none;}
+.lunbo_slide .dots > ul > li {float: left;width: 11px;height: 11px;line-height: 12px;text-align: center;border-radius: 50%;background: #383838;color: #fff;margin: 5px;}
+.lunbo_slide .dots > ul > li.active{background: #a9a9a9;}/*#a9a9a9*/
+
+.lunbo_slide {position: relative;}
+.lunbo_slide .wrap{position: relative;overflow: hidden;}
+.lunbo_slide .wrap > ul{position: absolute;top: 0;left: 0;}
+.lunbo_slide .wrap > ul > li{float: left;}
+/* .lunbo_slide > ul > li img{height: 1px;width: 1px;border: 0;} 这个交由页面自己去修改样式 */
